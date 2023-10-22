@@ -779,7 +779,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb168aa41d555a64cbf9a797c8e7bb74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flTimeToCompleteQuestion: 30
+  flTimeToCompleteQuestion: 15
   flTimeToShowCorrectAnswer: 10
   loadNextQuestion: 0
   isAnsweringQuestion: 0
@@ -1284,6 +1284,7 @@ MonoBehaviour:
   - {fileID: 1124373953}
   sprDefaultAnswerSprite: {fileID: 21300000, guid: b2d34aa60c4b57e43b42e76d4d8dbdf0, type: 3}
   sprCorrectAnswerSprite: {fileID: 21300000, guid: fb2063a88fd9fff4dafa2546cb0b8b6f, type: 3}
+  timerImage: {fileID: 2076358751}
 --- !u!1 &2029021666
 GameObject:
   m_ObjectHideFlags: 0
