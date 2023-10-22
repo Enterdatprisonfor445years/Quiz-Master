@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 
 public class Timer : MonoBehaviour
@@ -7,35 +8,52 @@ public class Timer : MonoBehaviour
     [SerializeField] float flTimeToCompleteQuestion = 30f;
     [SerializeField] float flTimeToShowCorrectAnswer = 10f;
 
+    public bool loadNextQuestion;
     public bool isAnsweringQuestion = false;
+    public float flFillFraction;
 
-    float timerValue;
+    float flTimerValue;
 
     void Update()
     {
         UpdateTimer();
     }
+
+    public void CancelTimer()
+    {
+        flTimerValue = 0f;
+    }
+
     void UpdateTimer()
     {
-        timerValue -= Time.deltaTime;
+        flTimerValue -= Time.deltaTime;
 
         if(isAnsweringQuestion)
         {
-            if(timerValue<=0)
+            if (flTimerValue > 0)
+            {
+                flFillFraction = flTimerValue / flTimeToCompleteQuestion;
+            }
+            else
             {
                 isAnsweringQuestion = false;
-                timerValue = flTimeToShowCorrectAnswer;
+                flTimerValue = flTimeToShowCorrectAnswer;
             }
         }
         else
         {
-            if(timerValue<=0)
+            if(flTimerValue > 0)
+            {
+                flFillFraction = flTimerValue / flTimeToShowCorrectAnswer;
+            }
+            else
             {
                 isAnsweringQuestion = true;
-                timerValue = flTimeToCompleteQuestion;
+                flTimerValue = flTimeToCompleteQuestion;
+                loadNextQuestion = true;
             }
         }
 
-        Debug.Log(timerValue);
+        Debug.Log(isAnsweringQuestion + ": " +flTimerValue + "=" + flFillFraction);
     }
 }
