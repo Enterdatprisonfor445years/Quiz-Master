@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb50a3217401cd746b9f515831bef087, type: 3}
   m_Name: Question 4
   m_EditorClassIdentifier: 
-  question: who are we?
+  question: What was Sonic the Hedgehog's original design?
   answers:
-  - bhjvkuv
-  - hbvbkuyvly
-  - hjbvkv
-  - why?
+  - A mouse
+  - a small humanoid in a jumpsuit
+  - An Echidna
+  - I don't know, you tell me!
   correctAnswerIndex: 0
